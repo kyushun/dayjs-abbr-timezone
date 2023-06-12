@@ -7,12 +7,15 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build",
+    "lint": "eslint \"src/**/*.ts\""
   },
   "author": "kyushun <mail@kyushun.com>",
   "devDependencies": {
     "@parcel/packager-ts": "2.9.2",
     "@parcel/transformer-typescript-types": "2.9.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
     "eslint": "^8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",

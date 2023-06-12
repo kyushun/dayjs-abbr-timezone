@@ -1,8 +1,19 @@
 {
-  "extends": ["airbnb-base", "prettier"],
-  "plugins": ["simple-import-sort"],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
   "rules": {
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "no-param-reassign": "off",
+    "func-names": "off"
   }
 }

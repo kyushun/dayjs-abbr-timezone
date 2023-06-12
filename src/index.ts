@@ -1,6 +1,7 @@
 import type { PluginFunc } from 'dayjs';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type timezoneDefinition from 'dayjs/plugin/timezone';
 import timezones from 'timezones.json';
-import type timezone from 'dayjs/plugin/timezone';
 
 export const abbrTimezone: PluginFunc = (_, dayjsClass) => {
   const originalFormat = dayjsClass.prototype.format;
@@ -8,15 +9,15 @@ export const abbrTimezone: PluginFunc = (_, dayjsClass) => {
   dayjsClass.prototype.format = function (template?: string | undefined) {
     const result = template?.replace(/\[([^\]]+)]|tz/g, (match) => {
       switch (match) {
-        case 'tz':
+        case 'tz': {
           const unabbrZoneName = this.offsetName('long');
-          const timezone = timezones.find(
-            (timezone) => timezone.value == unabbrZoneName,
-          );
+          const timezone = timezones.find((tz) => tz.value === unabbrZoneName);
 
           return timezone?.abbr ?? match;
-        default:
+        }
+        default: {
           return match;
+        }
       }
     });
 
