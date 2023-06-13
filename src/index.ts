@@ -1,9 +1,9 @@
-import type { PluginFunc } from 'dayjs';
+import type { Dayjs } from 'dayjs';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type timezoneDefinition from 'dayjs/plugin/timezone';
 import timezones from 'timezones.json';
 
-export const abbrTimezone: PluginFunc = (_, dayjsClass) => {
+export const abbrTimezone = (_: unknown, dayjsClass: typeof Dayjs) => {
   const originalFormat = dayjsClass.prototype.format;
 
   dayjsClass.prototype.format = function (template?: string | undefined) {
