@@ -12,12 +12,16 @@ npm install dayjs-abbr-timezone
 
 ## Usage
 
-To use the plugin, first import it into your file:
+This plugin depends on the `utc` and `timezone` plugins of Day.js. Please ensure you've imported and extended them as follows:
 
 ```typescript
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import abbrTimezone from 'dayjs-abbr-timezone';
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
 dayjs.extend(abbrTimezone);
 ```
 
