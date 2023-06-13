@@ -12,20 +12,24 @@ npm install dayjs-abbr-timezone
 
 ## Usage
 
-To use the plugin, first import it into your file:
+This plugin depends on the `utc` and `timezone` plugins of Day.js. Please ensure you've imported and extended them as follows:
 
 ```typescript
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import abbrTimezone from 'dayjs-abbr-timezone';
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
 dayjs.extend(abbrTimezone);
 ```
 
 Then you can use the format function with the `tz` option:
 
 ```typescript
-const date = dayjs('2023-01-01T12:00:00Z');
-console.log(date.format('YYYY-MM-DD HH:mm:ss tz'));
+const date = dayjs('2023-01-01T12:00:00Z').tz('Asia/Tokyo');
+console.log(date.format('YYYY-MM-DD HH:mm:ss tz')); // 2023-01-01 21:00:00 JST
 ```
 
 This will correctly display the abbreviated timezone rather than the standard GMT display.
