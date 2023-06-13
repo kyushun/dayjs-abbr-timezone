@@ -15,5 +15,12 @@
     "simple-import-sort/exports": "error",
     "no-param-reassign": "off",
     "func-names": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"]
+      }
+    }
   }
 }
