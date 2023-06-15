@@ -7,9 +7,9 @@ export const abbrTimezone = (_: unknown, dayjsClass: typeof Dayjs) => {
   const originalFormat = dayjsClass.prototype.format;
 
   dayjsClass.prototype.format = function (template?: string | undefined) {
-    const result = template?.replace(/\[([^\]]+)]|tz/g, (match) => {
+    const result = template?.replace(/\[([^\]]+)]|t/g, (match) => {
       switch (match) {
-        case 'tz': {
+        case 't': {
           const unabbrZoneName = this.offsetName('long');
           const timezone = timezones.find((tz) => tz.value === unabbrZoneName);
 
