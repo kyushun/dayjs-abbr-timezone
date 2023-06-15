@@ -28,6 +28,10 @@ describe('abbrTimezone', () => {
           .tz('America/Los_Angeles')
           .format('tz'),
       ).toBe('PST');
+
+      expect(
+        dayjs('2023-01-01T00:00:00+00:00').tz('Europe/Moscow').format('tz'),
+      ).toBe('MSK');
     });
   });
 
