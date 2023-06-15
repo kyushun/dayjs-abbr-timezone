@@ -1,7 +1,7 @@
 {
   "name": "dayjs-abbr-timezone",
   "description": "A plugin for day.js that extends the 'format' function, enabling the correct output of abbreviated timezones instead of the standard GMT display.",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "author": "kyushun <mail@kyushun.com>",
   "license": "MIT",
   "homepage": "https://github.com/kyushun/dayjs-abbr-timezone",
