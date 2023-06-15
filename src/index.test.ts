@@ -32,6 +32,10 @@ describe('abbrTimezone', () => {
       expect(
         dayjs('2023-01-01T00:00:00+00:00').tz('Europe/Moscow').format('tz'),
       ).toBe('MSK');
+
+      expect(
+        dayjs('2023-01-01T00:00:00+00:00').tz('Europe/London').format('tz'),
+      ).toBe('GMT');
     });
   });
 
