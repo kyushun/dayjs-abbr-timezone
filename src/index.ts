@@ -13,7 +13,9 @@ export const abbrTimezone = (_: unknown, dayjsClass: typeof Dayjs) => {
           const unabbrZoneName = this.offsetName('long');
           const timezone = timezones.find((tz) => tz.value === unabbrZoneName);
 
-          return `[${timezone?.abbr ?? match}]`;
+          if (timezone) return `[${timezone.abbr}]`;
+
+          return `[${this.offsetName() ?? match}]`;
         }
         default: {
           return match;
